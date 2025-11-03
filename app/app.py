@@ -30,7 +30,7 @@ def get_post(id : int):
     else:
         return text_posts.get(id)
 
-@app.post("/posts")
+@app.get("/posts")
 def create_post(post : createPost):
     new_post = {"title" : post.title, "content" : post.content}
     text_posts[max(text_posts.keys()) + 1] = new_post
